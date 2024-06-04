@@ -67,6 +67,7 @@ group :development do
   # gem "spring"
 
   gem 'brakeman'
+  gem 'database_consistency', require: false
 end
 
 group :test do
@@ -74,3 +75,8 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'activerecord-enhancedsqlite3-adapter'
+gem 'database_validations'
+gem 'discard'
+gem 'groupdate'
