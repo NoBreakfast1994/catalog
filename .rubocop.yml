@@ -1,0 +1,6 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - standard
+  - standard-custom
+  - standard-performance
