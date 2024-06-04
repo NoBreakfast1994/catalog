@@ -78,5 +78,6 @@ end
 
 gem 'activerecord-enhancedsqlite3-adapter'
 gem 'database_validations'
+gem 'devise'
 gem 'discard'
 gem 'groupdate'
