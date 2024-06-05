@@ -10,4 +10,6 @@ class User < ApplicationRecord
          :registerable,
          :rememberable,
          :validatable
+
+  has_one :business, dependent: :destroy
 end
