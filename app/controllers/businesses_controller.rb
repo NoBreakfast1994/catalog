@@ -2,26 +2,25 @@
 
 # Controller for managing businesses.
 class BusinessesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_business, only: %i[show edit update destroy]
 
-  # GET /businesses
+  # GET `/businesses`.
   def index
     @businesses = Business.all
   end
 
-  # GET /businesses/1
+  # GET `/businesses/1`.
   def show; end
 
-  # GET /businesses/new
+  # GET `/businesses/new`.
   def new
     @business = Business.new
   end
 
-  # GET /businesses/1/edit
+  # GET `/businesses/1/edit`.
   def edit; end
 
-  # POST /businesses
+  # POST `/businesses`.
   def create
     @business = Business.new(business_params)
 
@@ -32,7 +31,7 @@ class BusinessesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /businesses/1
+  # PATCH/PUT `/businesses/1`.
   def update
     if @business.update(business_params)
       redirect_to @business, notice: 'Business was successfully updated.', status: :see_other
@@ -41,7 +40,7 @@ class BusinessesController < ApplicationController
     end
   end
 
-  # DELETE /businesses/1
+  # DELETE `/businesses/1`.
   def destroy
     @business.destroy!
     redirect_to businesses_url, notice: 'Business was successfully destroyed.', status: :see_other

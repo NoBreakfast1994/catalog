@@ -15,11 +15,9 @@ class BusinessesTest < ApplicationSystemTestCase
   test 'should create business' do
     visit businesses_url
     click_on 'New business'
-
     fill_in 'Name', with: @business.name
     fill_in 'User', with: @business.user_id
     click_on 'Create Business'
-
     assert_text 'Business was successfully created'
     click_on 'Back'
   end
@@ -27,11 +25,9 @@ class BusinessesTest < ApplicationSystemTestCase
   test 'should update Business' do
     visit business_url(@business)
     click_on 'Edit this business', match: :first
-
     fill_in 'Name', with: @business.name
     fill_in 'User', with: @business.user_id
     click_on 'Update Business'
-
     assert_text 'Business was successfully updated'
     click_on 'Back'
   end
@@ -39,7 +35,6 @@ class BusinessesTest < ApplicationSystemTestCase
   test 'should destroy Business' do
     visit business_url(@business)
     click_on 'Destroy this business', match: :first
-
     assert_text 'Business was successfully destroyed'
   end
 end

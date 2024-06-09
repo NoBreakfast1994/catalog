@@ -1,4 +1,5 @@
 require:
+  - database_validations/rubocop/cops
   - rubocop-performance
   - rubocop-rails
   - standard

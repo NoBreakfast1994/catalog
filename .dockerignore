@@ -1,18 +1,9 @@
-# See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more about ignoring files.
-
-# Ignore git directory.
-/.git/
-
-# Ignore bundler config.
+# Ignore Bundler config.
 /.bundle
 
 # Ignore all environment files (except templates).
 !/.env*.erb
 /.env*
-
-# Ignore all default key files.
-/config/credentials/*.key
-/config/master.key
 
 # Ignore all logfiles and tempfiles.
 !/log/.keep
@@ -21,17 +12,25 @@
 /tmp/*
 
 # Ignore pidfiles, but keep the directory.
+!/tmp/pids/
 !/tmp/pids/.keep
 /tmp/pids/*
 
 # Ignore storage (uploaded files in development and any SQLite databases).
 !/storage/.keep
+!/tmp/storage/
 !/tmp/storage/.keep
+/public/assets
 /storage/*
 /tmp/storage/*
 
-# Ignore assets.
-!/app/assets/builds/.keep
-/app/assets/builds/*
-/node_modules/
-/public/assets
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore Vite's static assets path and Node.js modules.
+/public/vite*
+node_modules
+
+# Vite uses dotenv and suggests to ignore local-only env files.
+# Read more: https://vitejs.dev/guide/env-and-mode.html#env-files
+*.local

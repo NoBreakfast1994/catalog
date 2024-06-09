@@ -4,9 +4,8 @@
 class CreateBusinesses < ActiveRecord::Migration[7.1]
   def change
     create_table :businesses do |t|
-      t.string :name
-      t.references :user, null: false, foreign_key: true
-
+      t.string :name, default: '', null: false
+      t.references :user, foreign_key: true, null: false
       t.timestamps
     end
   end
