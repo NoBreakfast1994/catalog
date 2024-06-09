@@ -1,7 +1,11 @@
 require:
   - database_validations/rubocop/cops
+  - rubocop-capybara
   - rubocop-performance
   - rubocop-rails
   - standard
   - standard-custom
   - standard-performance
+
+AllCops:
+  NewCops: enable

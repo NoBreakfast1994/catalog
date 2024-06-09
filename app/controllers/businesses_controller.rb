@@ -25,7 +25,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
 
     if @business.save
-      redirect_to @business, notice: 'Business was successfully created.'
+      redirect_to @business, notice: t('controllers.businesses.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class BusinessesController < ApplicationController
   # PATCH/PUT `/businesses/1`.
   def update
     if @business.update(business_params)
-      redirect_to @business, notice: 'Business was successfully updated.', status: :see_other
+      redirect_to @business, notice: t('controllers.businesses.update.success'), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class BusinessesController < ApplicationController
   # DELETE `/businesses/1`.
   def destroy
     @business.destroy!
-    redirect_to businesses_url, notice: 'Business was successfully destroyed.', status: :see_other
+    redirect_to businesses_url, notice: t('controllers.businesses.destroy.success'), status: :see_other
   end
 
   private

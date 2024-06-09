@@ -76,7 +76,7 @@ m = Module.new do
     ARGV.each_with_index do |a, i|
       bundler_version = a if update_index && update_index.succ == i && a.match?(Gem::Version::ANCHORED_VERSION_PATTERN)
 
-      next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
+      next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/o
 
       bundler_version = Regexp.last_match(1)
       update_index = i
@@ -87,11 +87,11 @@ m = Module.new do
   # rubocop:enable Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
 
   def env_var_version
-    ENV['BUNDLER_VERSION']
+    ENV.fetch('BUNDLER_VERSION', nil)
   end
 
   def gemfile
-    gemfile = ENV['BUNDLE_GEMFILE']
+    gemfile = ENV.fetch('BUNDLE_GEMFILE', nil)
 
     return gemfile if gemfile.present?
 
@@ -123,7 +123,7 @@ m = Module.new do
 
     lockfile_contents = File.read(lockfile)
 
-    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
+    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/o
 
     Regexp.last_match(1)
   end
