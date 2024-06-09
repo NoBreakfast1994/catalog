@@ -20,10 +20,6 @@ end
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'rspec-rails'
-  gem 'rubocop', require: false
-  gem 'rubocop-capybara', require: false
-  gem 'rubocop-performance', require: false
-  gem 'rubocop-rails', require: false
   gem 'standard'
   gem 'standard-rails'
 end
@@ -37,6 +33,11 @@ gem 'groupdate'
 gem 'image_processing', '~> 1.2'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.3'
+gem 'rubocop', require: false
+gem 'rubocop-capybara', require: false
+gem 'rubocop-performance', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
 gem 'simple_form'
 gem 'sqlite3', '~> 1.4'
 gem 'turbo-rails'

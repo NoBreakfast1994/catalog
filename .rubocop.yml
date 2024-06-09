@@ -3,6 +3,7 @@ require:
   - rubocop-capybara
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
   - standard
   - standard-custom
   - standard-performance
