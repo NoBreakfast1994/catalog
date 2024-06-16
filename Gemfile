@@ -32,6 +32,7 @@ gem 'devise'
 gem 'discard'
 gem 'groupdate'
 gem 'image_processing', '~> 1.2'
+gem 'money-rails', '~> 1.12'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.3'
 gem 'rubocop', require: false
