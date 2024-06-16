@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-# Module to provide helper methods for the Businesses views.
+# Module to provide helper methods for the businesses views.
 module BusinessesHelper
 end

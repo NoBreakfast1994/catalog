@@ -12,3 +12,10 @@ en:
         success: "Business was successfully updated."
       destroy:
         success: "Business was successfully destroyed."
+    categories:
+      create:
+        success: "Category was successfully created."
+      update:
+        success: "Category was successfully updated."
+      destroy:
+        success: "Category was successfully destroyed."

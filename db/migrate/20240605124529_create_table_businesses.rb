@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Migration to create the businesses table.
+# Migration to create the table businesses.
 class CreateTableBusinesses < ActiveRecord::Migration[7.1]
   def change
     create_table :businesses do |t|

@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resource :business
+  resources :categories
 
   devise_for :users
 

@@ -13,6 +13,8 @@
 class Business < ApplicationRecord
   db_belongs_to :user
 
+  has_many :categories, dependent: :destroy
+
   validates :name, presence: true
   validates :user_id, db_uniqueness: true
 end
