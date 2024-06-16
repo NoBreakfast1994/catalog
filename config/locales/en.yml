@@ -1,6 +1,11 @@
 en:
   controllers:
+    application:
+      alerts:
+        create_business_profile: "Create your business profile to access more features."
     businesses:
+      alerts:
+        business_exists: "You already have a business profile."
       create:
         success: "Business was successfully created."
       update:

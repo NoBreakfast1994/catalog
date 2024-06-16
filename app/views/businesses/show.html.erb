@@ -1,6 +1,5 @@
 <%= render @business %>
 <div>
-  <%= link_to "Edit this business", edit_business_path(@business) %> |
-  <%= link_to "Back to businesses", businesses_path %>
-  <%= button_to "Destroy this business", @business, method: :delete %>
+  <%= link_to "Edit business", edit_business_path %>
+  <%= link_to "Destroy business", business_path, data: { turbo_confirm: "Are you sure?", turbo_method: :delete } %>
 </div>
