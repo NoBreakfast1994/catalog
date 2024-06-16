@@ -7,9 +7,10 @@
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  remember_created_at    :datetime
+#  business_id            :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -20,5 +21,9 @@ class User < ApplicationRecord
          :rememberable,
          :validatable
 
-  has_one :business, dependent: :destroy
+  has_one :business, dependent: :nullify
+
+  validates :email, presence: true
+  validates :reset_password_token, db_uniqueness: true
+  validates :business_id, db_uniqueness: true
 end
