@@ -93,6 +93,9 @@ GEM
     brakeman (6.1.2)
       racc
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -377,6 +380,7 @@ DEPENDENCIES
   annotate
   bootsnap
   brakeman
+  bundler-audit
   capybara
   database_consistency
   database_validations

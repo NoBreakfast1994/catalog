@@ -7,6 +7,7 @@ ruby '3.3.2'
 group :development do
   gem 'annotate'
   gem 'brakeman'
+  gem 'bundler-audit', require: false
   gem 'database_consistency', require: false
   gem 'rack-mini-profiler'
   gem 'web-console'
