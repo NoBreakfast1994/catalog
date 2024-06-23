@@ -1,0 +1,6 @@
+<%= render @offer %>
+<div>
+  <%= link_to "Edit this offer", edit_offer_path(@offer) %>
+  <%= link_to "Back to offers", offers_path %>
+  <%= link_to "Destroy this offer", @offer, data: { turbo_confirm: "Are you sure?", turbo_method: :delete } %>
+</div>

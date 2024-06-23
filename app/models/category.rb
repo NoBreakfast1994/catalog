@@ -14,5 +14,7 @@
 class Category < ApplicationRecord
   db_belongs_to :business
 
+  has_many :offers, dependent: :destroy
+
   validates :business_id, db_uniqueness: true
 end

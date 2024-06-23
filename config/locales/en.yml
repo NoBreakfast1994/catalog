@@ -19,3 +19,10 @@ en:
         success: "Category was successfully updated."
       destroy:
         success: "Category was successfully destroyed."
+    offers:
+      create:
+        success: "Offer was successfully created."
+      update:
+        success: "Offer was successfully updated."
+      destroy:
+        success: "Offer was successfully destroyed."

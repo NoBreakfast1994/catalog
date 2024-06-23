@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       t.datetime :remember_created_at
       t.datetime :reset_password_sent_at
       t.string :reset_password_token
-      t.timestamps null: false
+      t.timestamps
     end
 
     add_index :users, :email, unique: true

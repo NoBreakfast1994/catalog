@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_16_212634) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_23_131837) do
   create_table "businesses", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.integer "user_id", null: false
@@ -28,13 +28,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_212634) do
     t.index ["business_id"], name: "index_categories_on_business_id", unique: true
   end
 
-  create_table "table_categories", force: :cascade do |t|
+  create_table "offers", force: :cascade do |t|
+    t.text "description", default: ""
+    t.integer "discounted_price_cents", default: 0, null: false
+    t.string "discounted_price_currency", default: "BRL", null: false
     t.string "name", default: "", null: false
+    t.integer "original_price_cents", default: 0, null: false
+    t.string "original_price_currency", default: "BRL", null: false
     t.boolean "visible", default: true, null: false
-    t.integer "business_id", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["business_id"], name: "index_table_categories_on_business_id", unique: true
+    t.index ["category_id"], name: "index_offers_on_category_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,5 +56,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_212634) do
 
   add_foreign_key "businesses", "users"
   add_foreign_key "categories", "businesses"
-  add_foreign_key "table_categories", "businesses"
+  add_foreign_key "offers", "categories"
 end

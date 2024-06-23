@@ -2,12 +2,11 @@
 
 # Controller for managing categories.
 class CategoriesController < ApplicationController
-  before_action :set_business
   before_action :set_category, only: %i[show edit update destroy]
 
   # GET `/categories`.
   def index
-    @categories = @business.categories
+    @categories = current_business.categories
   end
 
   # GET `/categories/1`.
@@ -15,7 +14,7 @@ class CategoriesController < ApplicationController
 
   # GET `/categories/new`.
   def new
-    @category = @business.categories.build
+    @category = current_business.categories.build
   end
 
   # GET `/categories/1/edit`.
@@ -23,7 +22,7 @@ class CategoriesController < ApplicationController
 
   # POST `/categories`.
   def create
-    @category = @business.categories.build(category_params)
+    @category = current_business.categories.build(category_params)
 
     if @category.save
       redirect_to @category, notice: t('controllers.categories.create.success')
@@ -50,13 +49,9 @@ class CategoriesController < ApplicationController
 
   private
 
-  def set_business
-    @business = current_business
-  end
-
   # Use callbacks to share common setup or constraints between actions.
   def set_category
-    @category = @business.categories.find(params[:id])
+    @category = current_business.categories.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
