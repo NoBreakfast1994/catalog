@@ -10,6 +10,21 @@
     <%= vite_stylesheet_tag 'application.css' %>
   </head>
   <body>
+    <% if current_business.present? %>
+      <nav class="navbar bg-base-100">
+        <div class="flex-1">
+          <%= link_to current_business.name, root_path, class: 'btn btn-ghost text-xl' %>
+        </div>
+        <div class="flex-none">
+          <ul class="px-1 menu menu-horizontal">
+            <li><%= link_to 'Business', business_path %></li>
+            <li><%= link_to 'Categories', categories_path %></li>
+            <li><%= link_to 'Offers', offers_path %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %></li>
+          </ul>
+        </div>
+      </nav>
+    <%end%>
     <% if alert.present? %>
       <p class="alert"><%= alert %></p>
     <% end %>
